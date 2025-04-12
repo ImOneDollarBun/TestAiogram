@@ -26,7 +26,7 @@
 ####
 ```python main.py```
 #
-Чтобы кинуть бота в фон на убунте выполните
+### Чтобы кинуть бота в фон на убунте выполните
 ####
 ```nohup python3 main.py```
 ###
@@ -49,3 +49,17 @@ RestartSec=3
 [Install]
 WantedBy=multi-user.target
 ```
+####
+Перезапускаем демона
+####
+```systemctl daemon-reload```
+####
+Запускаем наш сервис (бота)
+####
+```systemctl start ExcelBot.service```
+####
+Проверяйте работоспособность
+```systemctl status ExcelBot```
+и включаем в автозагрузку
+####
+```systemctl enable ExcelBot```
