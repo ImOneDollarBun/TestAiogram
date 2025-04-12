@@ -35,6 +35,9 @@ async def input_file(message: Message, bot: Bot):
             for url in extracted_data['url'].values():
                 for xpath in extracted_data['xpath'].values():
                     await sql.add_data(title, url, xpath)
+
+                    await message.answer(f'{title, url, xpath}')
+
                     report[i] = [title, url, xpath]
                     i += 1
                     break
