@@ -45,4 +45,5 @@ async def input_file(message: Message, bot: Bot):
             s += '\n'
 
         await message.answer(s, parse_mode='Markdown')
+        await message.answer(str(report))
 
