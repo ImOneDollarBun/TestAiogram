@@ -6,10 +6,4 @@ def proceed(data: bytes) -> dict[str: str]:
     df = read_excel(BytesIO(data))
     df = df.to_dict()
 
-    data = {
-        'title': df['title'],
-        'url': df['url'],
-        'xpath': df['xpath']
-    }
-
     return df
