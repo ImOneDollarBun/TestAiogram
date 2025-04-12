@@ -30,24 +30,18 @@ async def input_file(message: Message, bot: Bot):
 
         extracted_data = proceed(buffer.read())
         report = {}
-        i = 0
-        for title in extracted_data['title'].values():
-            await message.answer(title)
-            for url in extracted_data['url'].values():
-                await message.answer(url)
-                for xpath in extracted_data['xpath'].values():
-                    await message.answer(xpath)
-                    #await sql.add_data(title, url, xpath)
 
-                    report[i] = [title, url, xpath]
-                    i += 1
-                    break
-                break
+        for i in range(len(extracted_data['title'])):
+            title = extracted_data['title'][i]
+            url = extracted_data['url'][i]
+            xpath = extracted_data['xpath'][i]
+
+            report[i] = [title, url, xpath]
+
         s = ''
         for x in report.values():
             s += ''.join(x[0]) + '\n' + ''.join(f'`{x[1]}`') + '\n' + ''.join(x[2]) + '\n'
             s += '\n'
 
         await message.answer(s, parse_mode='Markdown')
-        await message.answer(str(report))
 
