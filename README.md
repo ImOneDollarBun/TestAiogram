@@ -25,3 +25,27 @@
 6. Запуск бота
 ####
 ```python main.py```
+#
+Чтобы кинуть бота в фон на убунте выполните
+####
+```nohup python3 main.py```
+###
+Можно сделать автозапуск бота через ``systemctl``
+####
+```sudo nano /etc/systemd/system/ExcelBot.service```
+####
+```
+[Unit]
+Description=TG Bot
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/TestAiobot/
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+```
