@@ -12,4 +12,4 @@ def proceed(data: bytes) -> dict[str: str]:
         'xpath': [x for x in df['xpath'].values()]
     }
 
-    return data
+    return df
