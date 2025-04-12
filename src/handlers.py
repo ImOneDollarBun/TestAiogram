@@ -31,9 +31,9 @@ async def input_file(message: Message, bot: Bot):
         extracted_data = proceed(buffer.read())
         report = {}
         i = 0
-        for title in extracted_data['title'].values():
-            for url in extracted_data['url'].values():
-                for xpath in extracted_data['xpath'].values():
+        for title in extracted_data['title']:
+            for url in extracted_data['url']:
+                for xpath in extracted_data['xpath']:
                     await sql.add_data(title, url, xpath)
 
                     report[i] = [title, url, xpath]
