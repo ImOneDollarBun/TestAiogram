@@ -40,8 +40,8 @@ async def input_file(message: Message, bot: Bot):
                     break
                 break
         s = ''
-        for x in [info for info in report.values()]:
-            s = ''.join(x[0]) + '\n' + ''.join(f'`{x[1]}`') + '\n' + ''.join(x[2])
+        for x in report.values():
+            s += ''.join(x[0]) + '\n' + ''.join(f'`{x[1]}`') + '\n' + ''.join(x[2])
             s += '\n'
 
         await message.answer(s, parse_mode='Markdown')
