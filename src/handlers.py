@@ -5,6 +5,8 @@ from io import BytesIO
 from src.proceed_data import proceed
 from src.database.commands import DataBase
 from dotenv import load_dotenv
+from aiogram.utils.markdown import link
+from aiogram import md
 
 import os
 
@@ -40,7 +42,7 @@ async def input_file(message: Message, bot: Bot):
 
         s = ''
         for x in report.values():
-            s += ''.join(x[0]) + '\n' + ''.join(f'`{x[1]}`') + '\n' + ''.join(x[2]) + '\n'
+            s += ''.join(x[0]) + '\n' + ''.join(f'{md.link('link', x[1])}') + '\n' + ''.join(x[2]) + '\n'
             s += '\n'
 
         await message.answer(s, parse_mode='Markdown')
