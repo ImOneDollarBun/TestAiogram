@@ -1,0 +1,8 @@
+aiogram~=3.19.0
+pandas~=2.2.3
+dotenv~=0.9.9
+aiosqlite
+
+aiosqlite3~=0.3.0
+python-dotenv~=1.1.0
+openpyxl
