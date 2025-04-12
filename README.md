@@ -42,7 +42,7 @@ After=network.target
 [Service]
 User=root
 WorkingDirectory=/root/TestAiobot/
-ExecStart=/root/TestAiobot/venv/bin/python3 main.py
+ExecStart=/root/TestAiobot/venv/bin/python main.py
 Restart=always
 RestartSec=3
 
